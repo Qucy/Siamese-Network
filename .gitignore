@@ -2,3 +2,7 @@ __pycache__/
 .idea
 *h5
 logs/
+datasets/model
+datasets/negative
+datasets/positive
+datasets/raw_data
