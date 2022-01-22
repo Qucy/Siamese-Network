@@ -2,4 +2,3 @@ __pycache__/
 .idea
 *h5
 logs/
-datasets/

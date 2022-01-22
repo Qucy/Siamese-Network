@@ -1,12 +1,10 @@
 import os
 import tensorflow as tf
-from tensorflow import keras
 from tensorflow.keras import layers, Model, Sequential
 
 os.environ['CPP_TF_MIN_LOG_LEVEL'] = '2'
 
 print(tf.__version__)
-
 
 
 class ResidualBlock(layers.Layer):
@@ -134,21 +132,14 @@ class Siamese(Model):
     def __init__(self):
         super(Siamese, self).__init__()
         self.network1 = AttentionResNet([64, 128, 256, 512], [2, 2, 2, 2])
-        self.network2 = AttentionResNet([64, 128, 256, 512], [2, 2, 2, 2])
         self.d1 = layers.Dense(512, activation=tf.nn.relu)
         self.d2 = layers.Dense(1, activation=tf.nn.sigmoid)
 
 
     def call(self, inputs, training=None, mask=None):
         outputs1 = self.network1(inputs[:,:32,:,:])
-        outputs2 = self.network2(inputs[:,32:,:,:])
+        outputs2 = self.network1(inputs[:,32:,:,:])
         l1 = tf.math.abs(outputs1 - outputs2)
         x = self.d1(l1)
         x = self.d2(x)
         return x
-
-
-# images = tf.random.normal([64, 210, 105, 3])
-# siamese = Siamese()
-# outputs = siamese(images)
-# print(outputs, outputs.shape)

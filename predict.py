@@ -69,18 +69,3 @@ for x in range(num_of_image_to_check):
 
 plt.show()
 
-
-
-# # load image
-# pos_image = load_image(positive_image_path)
-# neg_image = load_image(negative_image_path)
-# # stack 2 images
-# inputs = tf.stack([pos_image, neg_image], axis=0)
-# # convert to float32
-# inputs = preprocess(inputs)
-# # make prediction
-# prediction = siamese.predict(inputs)
-#
-# print(prediction)
-
-
