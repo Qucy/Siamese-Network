@@ -130,9 +130,9 @@ if __name__ == '__main__':
     ### so for each character folder we're going to generate 10 positive samples and 10 negative samples
     ### here positive samples means image from the same character folder
     ### while negative samples means image from different character folder
-    # generate_positive_samples()
-    # generate_negative_samples()
-    #concat_images_and_write_target_folder(positive_df_path, positive_path)
+    generate_positive_samples()
+    generate_negative_samples()
+    concat_images_and_write_target_folder(positive_df_path, positive_path)
     concat_images_and_write_target_folder(negative_df_path, negative_path)
 
 
