@@ -335,6 +335,10 @@ After data is prepared you can use train.py and predict.py to train or make pred
 
 ![results](https://github.com/Qucy/Siamese-Network/blob/master/img/results1.jpg)
 
+Besides Omniglot datasets, I've also tried on some random hand written signatures and returned expected results. This would be another option model for compare signature similarity.
+
+![results](https://github.com/Qucy/Siamese-Network/blob/master/img/signature_compare.jpg)
+
 
 
  
